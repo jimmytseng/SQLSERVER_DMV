@@ -1,0 +1,31 @@
+--Find those missing indexes
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+SELECT TOP 20 
+ ROUND(s.avg_total_user_cost * s.avg_user_impact * 
+ (s.user_seeks + s.user_scans),0) AS [Total Cost]
+ , s.avg_user_impact -- impact越高代表越能改善效能
+ , d.statement AS TableName
+ , d.equality_columns 
+ , d.inequality_columns
+ , d.included_columns --index應該包含哪些欄位
+FROM sys.dm_db_missing_index_groups g 
+INNER JOIN sys.dm_db_missing_index_group_stats s 
+ ON s.group_handle = g.index_group_handle 
+INNER JOIN sys.dm_db_missing_index_details d --建議新增的index內容
+ ON d.index_handle = g.index_handle
+ORDER BY [Total Cost] DESC 
+
+--sys.dm_db_missing_index_details 
+Contains details of the database/schema/table 
+the missing index relates to, together with how the 
+index usage has been identified in queries (such as 
+equality/inequality).
+
+--sys.dm_db_missing_index_group_stats
+Contains details of how often the index would have 
+been used, how it would be used (seek or scan), and 
+a measure of the effectiveness of the index.
+
+--sys.dm_db_missing_index_groups
+This is a linking DMV, linking the previous two 
+DMVs together. 
