@@ -1,16 +1,24 @@
-Isolation levels
+Phenomena 
+--lost update
+兩個交易以上對同一欄未更新時，未對欄位進行鎖定。則可能造成交易被覆蓋的結果。
+--Dirty Read
+可能讀取到其他transaction未commit的資料，rollback資料後造成資料錯誤。
+--Non-repeatable Read
+在同一個 Transaction 中，重複讀取時會拿到不一致的資料。
+--Phantom Read
+交易中有另一個交易新增或刪除資料，造成第二次查詢多了資料或少了資料。
+
+Isolation levels 隔離等級
 --Read Uncommitted 
-This causes SELECT statements to ignore most locks and not take out 
-any locks.
+允許讀取未Commit的資料，有可能發生DirtyRead，可避免lost update。
 --Read Committed 
-This is the default isolation level. A query will wait until data has been committed or rolled back before SELECTing it.
+讀取已Commit的資料，可避免DirtyRead。
 --Repeatable Read 
-Any locks caused by SELECTs are held until the end of the transaction.
-Serializable Locks are taken out not only on the rows being selected/updated but also on nearby rows; 
-this prevents the insertion of data that might affect the query. 
---Read Committed Snapshot
-This relates to keeping a copy of any prechanged data, enabling better 
-concurrency. Statement based.
---Snapshot 
-This relates to keeping a copy of any prechanged data, enabling better 
-concurrency. Transaction oriented
+同一筆交易中讀取的資料必須相同，至少可避免 unrepeatable read 。
+--Serializable Isolation
+交易必須可以循序，會造成重大效能問題。
+
+
+
+
+

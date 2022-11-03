@@ -1,7 +1,3 @@
-## executed queries
-When a SQL query is run for the first time, the optimizer has to determine an optimal 
-way of satisfying the query. Typically, the optimizer looks at the record counts, available indexes, and statistics to determine the access paths necessary to fulfill the query 
-easily and quickly. The optimizer takes time to do this work. Rather than having to 
-perform this work for queries that are the same (except for different parameters), the 
-optimizer creates a cached plan that describes the access mechanism. This plan can 
-be reused by all subsequent similar queries.
+## 執行計畫
+當 sql 在 optimizer 會查看索引與統計資料做出最好的執行方法。
+所以optimizer會產生執行計畫描述如何獲取資料。

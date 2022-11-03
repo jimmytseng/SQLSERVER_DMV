@@ -1,5 +1,3 @@
- Statistics are created automatically for indexes. In addition, when the optimizer 
-comes across a column thatˇs used in a JOIN condition or a WHERE clause, and no 
-index exists, the optimizer will usually create statistics on the column. There are conditions that prevent statistics from being created or updated, and weˇll discuss these 
-later in this section. Sometimes, non-index-related statistics, including missing statistics, are indicators of missing indexes, and inspecting the DMVs that reveal missing 
-indexes should confirm this. 
+ --Statistics 
+ 参璸琌磞瓃逆籔ま逆だ参璸
+ optimizer穦秈︽膀计︳璸(cardinality estimate)だ猂ㄓ方参璸戈ㄓミэ到琩高琩高璸购
