@@ -36,8 +36,4 @@ Extended Events ¬O¤@­Ó·N¦b¨ú¥NSQL profiler®Ä¯àºÊ±±¤u¨ã¡ADMV¥i¥H°O¿ý¬ÛÃöÂX¥R¨Æ¥óª
 ## ¨ä¥L¤u¨ã
 ##### SQL SERVER PROFILER
 ##### DATABASE TUNING ADVISOR
-he Database Tuning Advisor (DTA) is a great tool for evaluating your index requirements.
 ##### CACHED PLAN INSPECTION
-Having a cached plan is a great starting point for 
-diagnosing problems, because it can provide more granular details of how the query 
-is executed

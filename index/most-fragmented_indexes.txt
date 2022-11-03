@@ -4,8 +4,8 @@ SELECT
  DB_NAME() AS DatbaseName
  , SCHEMA_NAME(o.Schema_ID) AS SchemaName
  , OBJECT_NAME(s.[object_id]) AS TableName
- , i.name AS IndexName 
- , ROUND(s.avg_fragmentation_in_percent,2) AS [Fragmentation %] 
+ , i.name AS IndexName --index名稱
+ , ROUND(s.avg_fragmentation_in_percent,2) AS [Fragmentation %] --碎裂程度
 INTO #TempFragmentation 
 FROM sys.dm_db_index_physical_stats(db_id(),null, null, null, null) s 
 INNER JOIN sys.indexes i ON s.[object_id] = i.[object_id] 

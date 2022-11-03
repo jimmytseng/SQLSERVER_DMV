@@ -1,0 +1,31 @@
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+SELECT TOP 20
+ wait_type, wait_time_ms, signal_wait_time_ms
+ , wait_time_ms - signal_wait_time_ms AS RealWait
+ , CONVERT(DECIMAL(12,2), wait_time_ms * 100.0 / SUM(wait_time_ms) OVER())
+ AS [% Waiting]
+ , CONVERT(DECIMAL(12,2), (wait_time_ms - signal_wait_time_ms) * 100.0
+ / SUM(wait_time_ms) OVER()) AS [% RealWait] 
+FROM sys.dm_os_wait_stats 
+WHERE wait_type NOT LIKE '%SLEEP%'
+ AND wait_type != 'WAITFOR' 
+ORDER BY wait_time_ms DESC 
+
+--sys.dm_os_wait_stats
+Contains information about all the waits encountered by threads of 
+execution
+
+--wait_type 
+Name of the wait type.
+--wait_time_ms 
+Total time spent waiting in milliseconds.
+signal_wait_time_ms 
+--Total time spent waiting to get on the CPU, when no longer waiting on 
+original cause of wait.
+--RealWait 
+Total time spent waiting on original resource. This is wait_time_ms less 
+signal_wait_time_ms.
+--% Waiting 
+How much time this wait_type spent waiting as a percentage of all waits.
+--% RealWait 
+How much time this RealWait spent waiting as a percentage of all waits.
