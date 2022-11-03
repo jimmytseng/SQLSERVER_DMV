@@ -6,31 +6,31 @@ DMV ¬ö¿ý¸ê®Æ®w¬ÛÃö¬¡°Ê¸ê°T¡A¥]¬A¯Á¤Þ¡B¬d¸ß°õ¦æª¬ªp¡BÂX¥R¬¡°Ê¡BI/Oµ¥¬ÛÃö¬¡°Ê¸ê°T¡
 §Q¥Î³o¨Ç¸ê°T¥i¥H§ïµ½¸ê®Æ®w®Ä¯à»Pºû¹B¨Ï¥Î¡C
 
 ##  DMV ¸ê°TÃþ§O
-##### Change data capture 
+##### --Change data capture 
 ¬°SQL Server 2008 ¥H¤W¥i¨Ï¥Îªº¥\¯à¡A¥i°O¿ýÄæ¦ì¡B¸ê®Æªí»PDDL¬ÛÃöÅÜ§óµ¥¸ê°T¡ADML¥i°O¿ý³o¨Ç¸ê°T
-##### Common Language Runtime
+##### --Common Language Runtime
 ¬ö¿ý SQL SERVER °õ¦æªº.NETµ{¦¡¬ÛÃö¸ê°T
-##### ¸ê®Æ®w¸ê°T²Î­p
+##### --¸ê®Æ®w¸ê°T²Î­p
 ¥]§t¸ê®Æ®w¨Ï¥ÎªÅ¶¡¡B¤À³Î(Partition)²Î­pµ¥
-##### Ãè¦V¥\¯à Database mirroring 
-##### Execution
+##### --Ãè¦V¥\¯à Database mirroring 
+##### --Execution
 ¥]¬A°õ¦æ­pµe»P¬d¸ß³Ì¨Î¤Æµ¥¸ê°Tµ¥
-##### Extended events
+##### --Extended events
 Extended Events ¬O¤@­Ó·N¦b¨ú¥NSQL profiler®Ä¯àºÊ±±¤u¨ã¡ADMV¥i¥H°O¿ý¬ÛÃöÂX¥R¨Æ¥óªº¸ê°T
-##### ¥þ¤åÀË¯Á Full-text search
-##### ¯Á¤Þ¸ê°T Index 
+##### --¥þ¤åÀË¯Á Full-text search
+##### --¯Á¤Þ¸ê°T Index 
 ¥]§t¯Á¤Þªº²Î­p»P¸Hµõ¸ê°T
-##### Input/Output (I/O)
+##### --Input/Output (I/O)
 ¸ê®Æ®wI/O read/write¸ê°T
-##### ¬d¸ß³qª¾
-##### °Æ¥»§Û¼g¸ê°T Replication
-##### Service Broker
+##### --¬d¸ß³qª¾
+##### --°Æ¥»§Û¼g¸ê°T Replication
+##### --Service Broker
 ÂÇ¥H´£¨Ñ±j©TÃ­©wªº°T®§¥­¥x
-##### SQL Server §@·~¨t²Î
+##### --SQL Server §@·~¨t²Î
 ¥]§t°O¾ÐÅé»P¨t²Î¬ÛÃö¸ê°T
-##### ¥æ©ö Transaction
+##### --¥æ©ö Transaction
 ¬ö¿ý¥æ©ö¬ÛÃö¸ê°T¥]§tsnapshot, database, session, and locks.
-##### ¸ê®Æ®w¦w¥þ Security
+##### --¸ê®Æ®w¦w¥þ Security
 
 
 ## ¨ä¥L¤u¨ã
